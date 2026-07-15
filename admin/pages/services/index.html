@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | Services</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+<link rel="stylesheet" href="../../assets/css/services.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Login Protection -->
+    <script>
+
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+    </script>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h2>NEXORA</h2>
+
+            </div>
+
+            <ul class="menu">
+
+                <li id="dashboardBtn">
+
+                    <i class="ri-dashboard-line"></i>
+
+                    <span>Dashboard</span>
+
+                </li>
+
+                <li id="portfolioBtn">
+
+                    <i class="ri-briefcase-line"></i>
+
+                    <span>Portfolio</span>
+
+                </li>
+
+                <li class="active">
+
+                    <i class="ri-service-line"></i>
+
+                    <span>Services</span>
+
+                </li>
+
+                <li id="messagesBtn">
+
+                    <i class="ri-message-3-line"></i>
+
+                    <span>Messages</span>
+
+                </li>
+
+                <li id="clientsBtn">
+
+                    <i class="ri-group-line"></i>
+
+                    <span>Clients</span>
+
+                </li>
+
+                <li id="teamBtn">
+
+                    <i class="ri-team-line"></i>
+
+                    <span>Team</span>
+
+                </li>
+
+                <li id="settingsBtn">
+
+                    <i class="ri-settings-3-line"></i>
+
+                    <span>Settings</span>
+
+                </li>
+
+                <li id="logoutBtn">
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>Logout</span>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="content">
+
+            <!-- Header -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Services</h1>
+
+                    <p>Manage all services from one place.</p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    id="addServiceBtn">
+
+                    <i class="ri-add-line"></i>
+
+                    Add Service
+
+                </button>
+
+            </header>
+
+            <!-- Stats -->
+
+            <section class="service-stats">
+
+                <div class="stat-card">
+
+                    <h4>Total Services</h4>
+
+                    <span>08</span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h4>Active</h4>
+
+                    <span>08</span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h4>Draft</h4>
+
+                    <span>00</span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h4>Categories</h4>
+
+                    <span>05</span>
+
+                </div>
+
+            </section>
+
+            <!-- Toolbar -->
+
+            <section class="toolbar">
+
+                <div class="search-box">
+
+                    <i class="ri-search-line"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search Service..."
+                        id="searchService">
+
+                </div>
+
+                <select id="categoryFilter">
+
+                    <option>All Categories</option>
+                    <option>Development</option>
+                    <option>Design</option>
+                    <option>Editing</option>
+                    <option>Marketing</option>
+
+                </select>
+
+            </section>
+
+            <!-- Table -->
+
+            <section class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Icon</th>
+
+                            <th>Service</th>
+
+                            <th>Category</th>
+
+                            <th>Price</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="serviceTable">
+
+                        <!-- JS -->
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal" id="serviceModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add Service</h2>
+
+                <i
+                    class="ri-close-line"
+                    id="closeModal">
+
+                </i>
+
+            </div>
+
+            <form id="serviceForm">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Service Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceName"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Category
+
+                    </label>
+
+                    <select id="serviceCategory">
+
+                        <option>Development</option>
+                        <option>Design</option>
+                        <option>Editing</option>
+                        <option>Marketing</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Price
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="servicePrice"
+                        placeholder="₹4999">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Icon
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceIcon"
+                        placeholder="ri-code-s-slash-line">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Description
+
+                    </label>
+
+                    <textarea
+                        id="serviceDescription">
+
+                    </textarea>
+
+                </div>
+
+                <button type="submit">
+
+                    Save Service
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="../../assets/js/services.js"></script>
+
+</body>
+
+</html>

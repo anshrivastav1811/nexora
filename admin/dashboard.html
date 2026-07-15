@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Login Protection -->
+    <script>
+
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+    </script>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>NEXORA</h2>
+            </div>
+
+            <ul class="menu">
+
+                <li class="active">
+                    <i class="ri-dashboard-line"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li id="portfolioBtn">
+                    <i class="ri-briefcase-line"></i>
+                    <span>Portfolio</span>
+                </li>
+
+                <li id="servicesBtn">
+                    <i class="ri-service-line"></i>
+                    <span>Services</span>
+                </li>
+
+                <li id="messagesBtn">
+                    <i class="ri-message-3-line"></i>
+                    <span>Messages</span>
+                </li>
+
+                <li id="clientsBtn">
+                    <i class="ri-group-line"></i>
+                    <span>Clients</span>
+                </li>
+
+                <li id="teamBtn">
+                    <i class="ri-team-line"></i>
+                    <span>Team</span>
+                </li>
+
+                <li id="settingsBtn">
+                    <i class="ri-settings-3-line"></i>
+                    <span>Settings</span>
+                </li>
+
+                <li id="logoutBtn">
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>Logout</span>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="content">
+
+            <!-- Header -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Dashboard</h1>
+
+                    <p>Welcome back, Admin 👋</p>
+
+                </div>
+
+                <div class="profile">
+
+                    <div class="search-box">
+
+                        <i class="ri-search-line"></i>
+
+                        <input
+                            type="text"
+                            placeholder="Search...">
+
+                    </div>
+
+                    <i class="ri-notification-3-line notification"></i>
+
+                    <img
+                        src="assets/images/admin.png"
+                        alt="Admin">
+
+                </div>
+
+            </header>
+
+            <!-- Cards -->
+
+            <section class="cards">
+
+                <div class="card">
+
+                    <h3>Total Projects</h3>
+
+                    <span id="projectCount">12</span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Total Services</h3>
+
+                    <span id="serviceCount">8</span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Total Clients</h3>
+
+                    <span id="clientCount">24</span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Messages</h3>
+
+                    <span id="messageCount">15</span>
+
+                </div>
+
+            </section>
+
+            <!-- Recent Activity -->
+
+            <section class="recent">
+
+                <div class="recent-card">
+
+                    <h2>Recent Activity</h2>
+
+                    <ul>
+
+                        <li>✅ New Portfolio Added</li>
+
+                        <li>✅ Client Message Received</li>
+
+                        <li>✅ Service Updated</li>
+
+                        <li>✅ Team Profile Edited</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="recent-card">
+
+                    <h2>Quick Actions</h2>
+
+                    <button>Add Project</button>
+                    <button>Add Service</button>
+                    <button>View Messages</button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="assets/js/dashboard.js"></script>
+
+</body>
+
+</html>

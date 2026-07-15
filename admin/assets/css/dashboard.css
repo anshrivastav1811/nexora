@@ -1,0 +1,1042 @@
+/* ==========================================================
+   NEXORA ADMIN DASHBOARD
+   dashboard.css
+========================================================== */
+
+
+/* ===========================
+   Root Variables
+=========================== */
+
+:root{
+
+    --primary:#6C63FF;
+    --primary-dark:#5A52E8;
+
+    --bg:#0F172A;
+    --card:#182235;
+    --card-hover:#202D45;
+
+    --text:#FFFFFF;
+    --text-light:#A8B3CF;
+
+    --border:#263248;
+
+    --danger:#FF4D67;
+    --success:#18C37E;
+
+}
+
+
+/* ===========================
+   Reset
+=========================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+li{
+
+    list-style:none;
+
+}
+
+
+/* ===========================
+   Dashboard Layout
+=========================== */
+
+.dashboard{
+
+    display:flex;
+    min-height:100vh;
+
+}
+
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+
+    width:280px;
+
+    background:var(--card);
+
+    border-right:1px solid var(--border);
+
+    padding:35px 22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.35s;
+
+}
+
+
+/* Logo */
+
+.logo{
+
+    margin-bottom:55px;
+
+}
+
+.logo h2{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:var(--primary);
+
+}
+
+
+/* Menu */
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+/* Menu Item */
+
+.menu li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    border-radius:15px;
+
+    color:var(--text-light);
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+}
+
+
+/* Icon */
+
+.menu li i{
+
+    font-size:1.3rem;
+
+}
+
+
+/* Hover */
+
+.menu li:hover{
+
+    background:var(--card-hover);
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+
+/* Active */
+
+.menu li.active{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    box-shadow:0 10px 25px rgba(108,99,255,.35);
+
+}
+
+
+/* Logout */
+
+#logoutBtn{
+
+    margin-top:auto;
+
+    color:#FF8080;
+
+}
+
+#logoutBtn:hover{
+
+    background:rgba(255,77,103,.15);
+
+}
+
+
+/* Sidebar Scroll */
+
+.sidebar{
+
+    overflow-y:auto;
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.content{
+
+    flex:1;
+
+    padding:35px;
+
+    overflow-y:auto;
+
+}
+
+
+/* ==========================================================
+   TOPBAR
+========================================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.topbar p{
+
+    margin-top:8px;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   PROFILE AREA
+========================================================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+/* ==========================================================
+   SEARCH BOX
+========================================================== */
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:260px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+}
+
+.search-box i{
+
+    color:var(--text-light);
+
+    font-size:1.1rem;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:#fff;
+
+    font-size:.95rem;
+
+}
+
+.search-box input::placeholder{
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   NOTIFICATION
+========================================================== */
+
+.notification{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--card);
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:1.2rem;
+
+}
+
+.notification:hover{
+
+    background:var(--primary);
+
+}
+
+
+/* ==========================================================
+   PROFILE IMAGE
+========================================================== */
+
+.profile img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--primary);
+
+}
+
+
+/* ==========================================================
+   DASHBOARD CARDS
+========================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:22px;
+
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--card-hover);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.card h3{
+
+    color:var(--text-light);
+
+    font-size:1rem;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   CARD NUMBER
+========================================================== */
+
+.card span{
+
+    display:block;
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   RECENT SECTION
+========================================================== */
+
+.recent{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+/* ==========================================================
+   RECENT CARD
+========================================================== */
+
+.recent-card{
+
+    background:rgba(24,34,53,.85);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    transition:.35s;
+
+}
+
+.recent-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 40px rgba(108,99,255,.15);
+
+}
+
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.recent-card h2{
+
+    font-size:1.3rem;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   ACTIVITY LIST
+========================================================== */
+
+.recent-card ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.recent-card ul li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--text-light);
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.recent-card ul li:hover{
+
+    background:rgba(108,99,255,.12);
+
+    border-color:var(--primary);
+
+    color:#fff;
+
+    transform:translateX(8px);
+
+}
+
+
+/* ==========================================================
+   QUICK ACTIONS
+========================================================== */
+
+.recent-card button{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.recent-card button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(108,99,255,.35);
+
+}
+
+.recent-card button:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   GLASS EFFECT
+========================================================== */
+
+.card,
+.recent-card,
+.search-box,
+.notification{
+
+    backdrop-filter:blur(18px);
+
+}
+
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.cards{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.recent{
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+*{
+
+    transition:background .3s,
+               color .3s,
+               border .3s,
+               transform .3s;
+
+}
+
+/* ==========================================================
+   RESPONSIVE - 1200px
+========================================================== */
+
+@media (max-width:1200px){
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 992px
+========================================================== */
+
+@media (max-width:992px){
+
+    .sidebar{
+
+        width:90px;
+
+        padding:30px 12px;
+
+    }
+
+    .logo h2{
+
+        display:none;
+
+    }
+
+    .menu li{
+
+        justify-content:center;
+
+    }
+
+    .menu li span{
+
+        display:none;
+
+    }
+
+    .content{
+
+        padding:25px;
+
+    }
+
+    .recent{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 768px
+========================================================== */
+
+@media (max-width:768px){
+
+    .dashboard{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        border-right:none;
+
+        border-bottom:1px solid var(--border);
+
+    }
+
+    .menu{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .menu li{
+
+        width:70px;
+
+        height:70px;
+
+        padding:0;
+
+        justify-content:center;
+
+    }
+
+    .content{
+
+        padding:20px;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .profile{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 480px
+========================================================== */
+
+@media (max-width:480px){
+
+    .topbar h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .recent-card{
+
+        padding:20px;
+
+    }
+
+    .card span{
+
+        font-size:1.8rem;
+
+    }
+
+    .recent-card h2{
+
+        font-size:1.1rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   BUTTON FOCUS
+========================================================== */
+
+button:focus{
+
+    outline:none;
+
+    box-shadow:0 0 0 3px rgba(108,99,255,.35);
+
+}
+
+
+/* ==========================================================
+   INPUT FOCUS
+========================================================== */
+
+input:focus{
+
+    outline:none;
+
+}
+
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/* ==========================================================
+   CARD ENTRY ANIMATION
+========================================================== */
+
+.card{
+
+    animation:cardPop .6s ease both;
+
+}
+
+.card:nth-child(2){
+
+    animation-delay:.1s;
+
+}
+
+.card:nth-child(3){
+
+    animation-delay:.2s;
+
+}
+
+.card:nth-child(4){
+
+    animation-delay:.3s;
+
+}
+
+@keyframes cardPop{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   NOTIFICATION HOVER
+========================================================== */
+
+.notification:hover{
+
+    transform:rotate(15deg) scale(1.08);
+
+}
+
+
+/* ==========================================================
+   PROFILE IMAGE
+========================================================== */
+
+.profile img{
+
+    transition:.3s;
+
+}
+
+.profile img:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 10px 30px rgba(108,99,255,.35);
+
+}
+
+
+/* ==========================================================
+   FINISHED
+========================================================== */

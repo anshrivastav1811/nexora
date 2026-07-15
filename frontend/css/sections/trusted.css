@@ -1,0 +1,259 @@
+/* ========================================= */
+/* NEXORA V2 | TRUSTED CSS                   */
+/* File: css/sections/trusted.css             */
+/* ========================================= */
+
+
+/* ========================================= */
+/* TRUSTED SECTION                           */
+/* ========================================= */
+
+
+.trusted {
+
+
+    padding:70px 0;
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+    border-bottom:
+
+    1px solid var(--border);
+
+
+}
+
+
+
+
+
+.trusted-container {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    gap:40px;
+
+
+}
+
+
+
+
+
+/* ========================================= */
+/* TITLE                                     */
+/* ========================================= */
+
+
+.trusted-title {
+
+
+    color:
+
+    var(--text-muted);
+
+
+    font-size:14px;
+
+
+    letter-spacing:1px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+
+/* ========================================= */
+/* LOGOS                                     */
+/* ========================================= */
+
+
+.trusted-logos {
+
+
+    width:100%;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+
+    gap:25px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.trusted-logo {
+
+
+    height:80px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    border-radius:
+
+    var(--radius-md);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    background:
+
+    rgba(255,255,255,.03);
+
+
+    color:
+
+    rgba(255,255,255,.5);
+
+
+    font-size:18px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:1px;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+
+.trusted-logo:hover {
+
+
+    color:white;
+
+
+    border-color:
+
+    rgba(37,99,235,.5);
+
+
+    transform:
+
+    translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+/* ========================================= */
+/* RESPONSIVE                                */
+/* ========================================= */
+
+
+@media(max-width:900px){
+
+
+    .trusted-logos {
+
+
+        grid-template-columns:
+
+        repeat(3,1fr);
+
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+    .trusted {
+
+
+        padding:50px 0;
+
+
+    }
+
+
+
+    .trusted-logos {
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+        gap:15px;
+
+
+    }
+
+
+
+    .trusted-logo {
+
+
+        height:65px;
+
+
+        font-size:14px;
+
+
+    }
+
+
+}

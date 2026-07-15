@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | Portfolio Manager</title>
+
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("isLoggedIn")!=="true"){
+
+    window.location.href="../../login.html";
+
+}
+
+</script>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>NEXORA</h2>
+
+        </div>
+
+        <ul class="menu">
+
+            <li onclick="location.href='../../dashboard.html'">
+
+                <i class="ri-dashboard-line"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li class="active">
+
+                <i class="ri-briefcase-line"></i>
+
+                <span>Portfolio</span>
+
+            </li>
+
+            <li id="logoutBtn">
+
+                <i class="ri-logout-box-r-line"></i>
+
+                <span>Logout</span>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Content -->
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Portfolio Manager</h1>
+
+                <p>Manage all NEXORA projects.</p>
+
+            </div>
+
+            <button class="login-btn" onclick="location.href='add.html'">
+
+                <i class="ri-add-line"></i>
+
+                Add Project
+
+            </button>
+
+        </header>
+
+        <!-- Table -->
+
+        <div class="recent-card">
+
+            <table width="100%">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Thumbnail</th>
+
+                        <th>Project</th>
+
+                        <th>Category</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>01</td>
+
+                        <td>🖼️</td>
+
+                        <td>NEXORA</td>
+
+                        <td>Agency</td>
+
+                        <td>Published</td>
+
+                        <td>
+
+                            <button>Edit</button>
+
+                            <button>Delete</button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../../assets/js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+/* ========================================= */
+/* NEXORA GLOBAL CSS                         */
+/* ========================================= */
+
+
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--primary-bg);
+    color:var(--text-primary);
+    font-family:var(--font-primary);
+    overflow-x:hidden;
+    line-height:1.6;
+
+}
+
+
+
+/* ========================================= */
+/* DEFAULT */
+/* ========================================= */
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+button,
+input,
+textarea{
+
+    border:none;
+    outline:none;
+    background:none;
+    font-family:inherit;
+
+}
+
+
+
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.container{
+
+    width:min(90%,1200px);
+
+    margin-inline:auto;
+
+}
+
+
+
+/* ========================================= */
+/* SECTION */
+/* ========================================= */
+
+section{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+
+
+/* ========================================= */
+/* TYPOGRAPHY */
+/* ========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:var(--text-primary);
+    font-weight:700;
+    line-height:1.1;
+
+}
+
+
+p{
+
+    color:var(--text-secondary);
+
+}
+
+
+
+/* ========================================= */
+/* BUTTON */
+/* ========================================= */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    background:var(--accent-color);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.btn-outline{
+
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+
+
+/* ========================================= */
+/* GLASS */
+/* ========================================= */
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+
+/* ========================================= */
+/* UTILITIES */
+/* ========================================= */
+
+.flex{
+
+    display:flex;
+
+}
+
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+/* ========================================= */
+/* ANIMATIONS */
+/* ========================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+/* ========================================= */
+/* SCROLLBAR */
+/* ========================================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent-color);
+
+    border-radius:20px;
+
+}
+
+
+
+/* ========================================= */
+/* SELECTION */
+/* ========================================= */
+
+::selection{
+
+    background:var(--accent-color);
+
+    color:#fff;
+
+}
